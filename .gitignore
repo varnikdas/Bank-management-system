@@ -1,0 +1,4 @@
+# Ignore IDE files
+nbproject/
+dist/
+build/
