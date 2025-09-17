@@ -177,15 +177,20 @@ public class SignupThree extends JFrame implements ActionListener {
             String facility = "";
             if (c1.isSelected()) {
                 facility = facility + " ATM Card";
-            } else if (c2.isSelected()) {
-                facility = facility + " Internet Banling";
-            } else if (c3.isSelected()) {
+            }
+            if (c2.isSelected()) {
+                facility = facility + " Internet Banking";
+            }
+            if (c3.isSelected()) {
                 facility = facility + " Mobile Banking";
-            } else if (c4.isSelected()) {
+            }
+            if (c4.isSelected()) {
                 facility = facility + " EMAIL & SMS Alerts";
-            } else if (c5.isSelected()) {
+            }
+            if (c5.isSelected()) {
                 facility = facility + " Cheque Book";
-            } else if (c6.isSelected()) {
+            }
+            if (c6.isSelected()) {
                 facility = facility + " E-Statement";
             }
 
@@ -207,7 +212,6 @@ public class SignupThree extends JFrame implements ActionListener {
             } catch (Exception e) {
                 System.out.println(e);
             }
-
         } else if (ae.getSource() == cancel) {
             setVisible(false);
             new Login().setVisible(true);
