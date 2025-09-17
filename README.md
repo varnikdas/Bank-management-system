@@ -24,7 +24,7 @@ A desktop application built with Java Swing and MySQL for managing user accounts
 
 1.  **Clone the repository**:
     ```
-    git clone [https://github.com/vamikdas/Bank-management-system.git](https://github.com/vamikdas/Bank-management-system.git)
+    git clone [https://github.com/varikdas/Bank-management-system.git](https://github.com/varikdas/Bank-management-system.git)
     ```
 
 2.  **Set up the database**:
