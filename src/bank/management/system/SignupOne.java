@@ -171,48 +171,47 @@ public class SignupOne extends JFrame implements ActionListener {
     }
     
     
-   public void actionPerformed(ActionEvent ae){
-       String formno=""+random;
-       String name=nameTextField.getText();
-       String fname=fnameTextField.getText();
-       String dob=((JTextField)dateChooser.getDateEditor().getUiComponent()).getText();
-       String gender =null;
-       if(male.isSelected()){
-           gender="Male";
-       }else if(female.isSelected()){
-           gender="Female";
-       }
-       String email=emailTextField.getText();
-       String marital=null;
-       if(married.isSelected()){
-           marital="Married";
-       }else if (unmarried.isSelected()){
-           marital="Unmarried";
-       }else if(other.isSelected()){
-           marital="Other";
-       }
-       String address=addressTextField.getText();
-       String city=addressTextField.getText();
-       String state=addressTextField.getText();
-       String pin=addressTextField.getText();
-       
-       
-       try{
-           if(name.equals("")){
-               JOptionPane.showMessageDialog(null,"Name is Required");
-           }else{
-               Conn c=new Conn();
-               String query="insert into signup values('"+formno+"','"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+marital+"','"+address+"','"+city+"','"+pin+"','"+state+"')";
-               c.s.executeUpdate(query);
-               
-               setVisible(false);
-               new SignupTwo(formno).setVisible(true);
-           }
-       }catch (Exception e){
-           System.out.println(e);
-       }
-   }
-
+    public void actionPerformed(ActionEvent ae){
+        String formno=""+random;
+        String name=nameTextField.getText();
+        String fname=fnameTextField.getText();
+        String dob=((JTextField)dateChooser.getDateEditor().getUiComponent()).getText();
+        String gender =null;
+        if(male.isSelected()){
+            gender="Male";
+        }else if(female.isSelected()){
+            gender="Female";
+        }
+        String email=emailTextField.getText();
+        String marital=null;
+        if(married.isSelected()){
+            marital="Married";
+        }else if (unmarried.isSelected()){
+            marital="Unmarried";
+        }else if(other.isSelected()){
+            marital="Other";
+        }
+        String address=addressTextField.getText();
+        String city=cityTextField.getText(); 
+        String state=stateTextField.getText();
+        String pin=pinTextField.getText();
+        
+        
+        try{
+            if(name.equals("")){
+                JOptionPane.showMessageDialog(null,"Name is Required");
+            }else{
+                Conn c=new Conn();
+                String query="insert into signup values('"+formno+"','"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+marital+"','"+address+"','"+city+"','"+pin+"','"+state+"')";
+                c.s.executeUpdate(query);
+                
+                setVisible(false);
+                new SignupTwo(formno).setVisible(true);
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
 
     public static void main(String[] args) {
         new SignupOne();
